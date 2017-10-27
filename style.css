@@ -67,6 +67,26 @@ button:hover {
     float: right;
 }
 
+@media screen and (max-width:360px) {
+    .search-container {
+        float: none;
+        
+    }
+    .input-group {
+        width: 100%;
+        transform: translate(0,0);
+       
+    }
+    .btn {
+        width: 100%;
+        display: block;
+    }
+    .sidebar {
+        width: 100%;
+        margin-top: 50px;
+    }
+}
+
 .container {
     height: 100%;
 }
