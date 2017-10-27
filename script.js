@@ -13,7 +13,7 @@ function getWeather() {
   if(text[0].value === "" ) {
       alert("Niste unijeli ime grada!!");
  }else{
-   getData("http://api.openweathermap.org/data/2.5/weather?q=" + text[0].value +"&units=metric&appid="+ key, parseData,"GET")
+   getData("https://api.openweathermap.org/data/2.5/weather?q=" + text[0].value +"&units=metric&appid="+ key, parseData,"GET")
      
  }
 
@@ -21,7 +21,7 @@ function getWeather() {
 function parseGeoData(data) {
     var lat = data.location.lat;
     var lon = data.location.lng;
-    getData("http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon + "&appid="+key,parseData,"GET" )
+    getData("https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon + "&appid="+key,parseData,"GET" )
     console.log(data)   
 }
 function getData(theUrl, callback,req){  
