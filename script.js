@@ -11,7 +11,7 @@ function getWeather() {
   var text = document.getElementsByTagName("input");
   console.log(text[0].value) 
   if(text[0].value === "" ) {
-      alert("Niste unijeli ime grada!!");
+      alert("You must provide city name!");
  }else{
    getData("https://api.openweathermap.org/data/2.5/weather?q=" + text[0].value +"&units=metric&appid="+ key, parseData,"GET")
      
@@ -45,14 +45,14 @@ function getData(theUrl, callback,req){
      iconDiv.innerHTML=iconData;
      var weatherDesc = data.weather[0].description;
      console.log(weatherDesc)
-     var temp = "Trenutna temperatura je: "+data.main.temp + "°C";
+     var temp = "Current temperature: "+data.main.temp + "°C";
      var tempDiv = document.getElementsByClassName("temp")[0]
      tempDiv.innerHTML = temp;
      console.log(tempDiv)
-     var wind = "Brzina vjetra je: "+data.wind.speed + "kmh";
+     var wind = "Wind speed: "+data.wind.speed + "kmh";
      var windDiv = document.getElementsByClassName("wind")[0]
     windDiv.innerHTML = wind;
-     var humid ="Vlažnost: "+ data.main.humidity;
+     var humid ="Humidty: "+ data.main.humidity;
      var humidDiv = document.getElementsByClassName("humid")[0]
      humidDiv.innerHTML =humid;
      console.log(temp)
@@ -61,6 +61,8 @@ function getData(theUrl, callback,req){
      var weatherDataFor = city + ", " + state;
      var weatherInfo = document.getElementsByClassName("info")[0];
      weatherInfo.innerHTML = weatherDataFor;
+     var description = document.getElementsByClassName("description")[0];
+     description.innerHTML="Description: " + data.weather[0].description;
     
     switch(weatherDesc) {
         case "broken clouds":
