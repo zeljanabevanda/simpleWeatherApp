@@ -97,6 +97,7 @@ button:hover {
 
 .container {
     height: 100%;
+    overflow: hidden;
 }
 
 .container:after {
@@ -107,6 +108,7 @@ button:hover {
 
 .img-container {
     overflow: auto;
+    height: 60vh;
 }
 
 img {
